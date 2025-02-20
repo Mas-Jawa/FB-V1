@@ -880,7 +880,6 @@ def logoku():
 # Animasi Login Ngab
 
 import requests
-from PIL import Image
 from io import BytesIO
 from asciimatics.screen import Screen
 from asciimatics.renderers import ImageFile
