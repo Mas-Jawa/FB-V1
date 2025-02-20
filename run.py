@@ -877,41 +877,6 @@ def logoku():
     # Cetak ke console
     console.print(panel)
 
-# Animasi Login Ngab
-
-import requests
-from io import BytesIO
-from asciimatics.screen import Screen
-from asciimatics.renderers import ImageFile
-
-def display_image(screen, image_path):
-    # Menampilkan gambar di terminal
-    renderer = ImageFile(image_path)
-    screen.clear_buffer(7, 0, 0)
-    screen.print_at(renderer, 0, 0)
-    screen.refresh()
-    screen.wait_for_input(10)
-
-def main():
-    # URL gambar
-    image_url = input("Masukkan URL gambar:https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fwallpaper-hacker-keren-3d&psig=AOvVaw0AZ2gO9g8G8bNVwcuRsCxZ&ust=1740130579202000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKC_zpD60YsDFQAAAAAdAAAAABAE ")
-    
-    # Mengunduh gambar
-    response = requests.get(image_url)
-    if response.status_code == 200:
-        image = Image.open(BytesIO(response.content))
-        image_path = 'temp_image.png'
-        image.save(image_path)
-
-        # Menampilkan gambar di terminal
-        Screen.wrapper(display_image, image_path)
-    else:
-        print("Gagal mengunduh gambar.")
-
-if __name__ == "__main__":
-    main()
-
-
 # Panggil fungsi untuk menampilkan banner
 
 
